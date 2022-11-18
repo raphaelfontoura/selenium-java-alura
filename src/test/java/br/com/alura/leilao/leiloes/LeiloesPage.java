@@ -8,6 +8,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 public class LeiloesPage {
 
     private static final String URL_LEILOES_FORM = "http://localhost:8080/leiloes/new";
+    private static final String URL_LEILOES = "http://localhost:8080/leiloes";
+
 
     private WebDriver browser;
 
@@ -33,5 +35,9 @@ public class LeiloesPage {
         return colunaNome.getText().equals(nome)
                 && colunaData.getText().equals(data)
                 && colunaValor.getText().equals(valor);
+    }
+
+    public boolean isPaginaAtual() {
+        return browser.getCurrentUrl().equals(URL_LEILOES);
     }
 }
