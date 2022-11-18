@@ -14,5 +14,4 @@ public class HelloWorldSelenium {
         browser.quit();
     }
 
-
 }

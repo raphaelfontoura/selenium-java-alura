@@ -17,7 +17,7 @@ public class LoginTest {
 
     @AfterEach
     void tearDown() {
-        this.paginaDeLogin.fechar();
+        this.paginaDeLogin.close();
     }
 
     @Test
