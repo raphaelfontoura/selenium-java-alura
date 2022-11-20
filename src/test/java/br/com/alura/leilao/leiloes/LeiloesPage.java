@@ -21,6 +21,11 @@ public class LeiloesPage extends PageObject {
         return new CadastroLeilaoPage(browser);
     }
 
+    public DadosLeilaoPage carregarDadosLeilao(int idLeilao) {
+        this.browser.navigate().to(String.format(URL_LEILOES + "/%d", idLeilao));
+        return new DadosLeilaoPage(browser);
+    }
+
     public boolean isLeilaoCadastrado(String nome, String valor, String data) {
         WebElement element = browser.findElement(By.cssSelector("#tabela-leiloes tbody tr:last-child"));
         WebElement colunaNome = element.findElement(By.cssSelector("td:nth-child(1)"));
@@ -35,4 +40,5 @@ public class LeiloesPage extends PageObject {
     public boolean isPaginaAtual() {
         return browser.getCurrentUrl().equals(URL_LEILOES);
     }
+
 }
